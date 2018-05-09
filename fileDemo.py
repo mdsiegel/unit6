@@ -6,6 +6,8 @@ file = open('engmix.txt')
 
 numWords = 0
 for line in file:
+    if 'sieg' in line:
+        print(line)
     numWords += 1
     
 print(numWords)
