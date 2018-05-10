@@ -6,5 +6,5 @@ fileToOpen = input('What file do you want? ')
 file = open(fileToOpen)
 
 for line in file:
-    print(line)
+    print(line.strip())
 
