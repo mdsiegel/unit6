@@ -9,6 +9,8 @@ for line in file:
         word2 = []
         if len(word2) > 0:
             word2.append(word2[0])
-        word2[0] = ch
+            word2[0] = ch
+        else:
+            word2.append(ch)
         if word2 == line:
             print(line)
