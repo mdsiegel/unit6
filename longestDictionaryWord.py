@@ -10,3 +10,4 @@ for line in file:
         count = len(line)
         word = line
 print(count)
+print(word)
