@@ -6,7 +6,8 @@ file = open('engmix.txt')
 
 L = [0]*23
 for line in file:
+   
     L[len(line.strip())] +=1
 
-for i in range(0,len(L)):
-    print('There are',L[i], i+1, 'words')
+for i in range(1,len(L)):
+    print('There are',L[i], i, 'words')
