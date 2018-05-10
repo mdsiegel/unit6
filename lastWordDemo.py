@@ -6,4 +6,7 @@ file = open('fileDemo.py')
 
 for line in file:
     words = line.split()
-    print(words[-1])
+    if len(words) > 0:
+        print(words[-1])
+    else:
+        print()
