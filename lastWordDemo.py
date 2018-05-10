@@ -6,4 +6,4 @@ file = open('fileDemo.py')
 
 for line in file:
     words = line.split()
-    print(words)
+    print(words[-1])
