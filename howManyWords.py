@@ -8,5 +8,5 @@ L = [0]*23
 for line in file:
     L[len(line)] +=1
 
-for i in range(0,L):
+for i in range(0,len(L)):
     print('There are',L[i], i, 'words')
