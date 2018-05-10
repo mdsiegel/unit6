@@ -8,6 +8,6 @@ L = []
 for line in file:
     L.append(line.strip())
 
-for i in range(len(L)-1,0,-1):
+for i in range(len(L)-1,-1,-1):
     print(L[i])
 
