@@ -5,7 +5,7 @@
 file = open('engmix.txt')
 
 data = {}
-for ch in 'abcdefghijklmnopqrstuvwxyz'
+for ch in 'abcdefghijklmnopqrstuvwxyz':
     data[ch:'shortest'] = ''
     data[ch:'longest'] = ''
 
