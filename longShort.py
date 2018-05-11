@@ -4,15 +4,21 @@
 
 file = open('engmix.txt')
 
-data = {}
+lShort = ['']*26
+lLong = ['']*26
+lAlph = ['']*26
+
+i = 0
 for ch in 'abcdefghijklmnopqrstuvwxyz':
-    data[ch:'shortest'] = ''
-    data[ch:'longest'] = ''
+    lAlph[i] = ch
+    i += 1
+    
 
 for line in file:
     line = line.strip()
     firstLetter = line[0]
-    if len(line) < len(data[firstLetter:'shortest']):
-        data[ch:'shortest'] = line
-    if len(line) > len(data[firstLetter:'longest']):
-        data[ch:'longest'] = line
+    shortestWord = lShort[
+    if len(line) < len(shortestWord):
+        data[firstLetter:'shortest'] = line
+    if len(line) > len(longestWord):
+        data[firstLetter:'longest'] = line
