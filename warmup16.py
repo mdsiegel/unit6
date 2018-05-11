@@ -6,7 +6,9 @@ file = open('engmix.txt')
 
 
 for line in file:
-    if line[0] == 'm' and line[-2] == 's':
-        print(line.strip())
+    line_ = line.strip()
+    if len(line_)>0:
+        if line_[0] == 'm' and line_[-1] == 's':
+            print(line_)
     
     
