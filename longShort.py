@@ -18,7 +18,8 @@ for line in file:
     line = line.strip()
     firstLetter = line[0]
     numLetter = lAlph[firstLetter]
-    shortestWord = lShort
+    shortestWord = lShort[numLetter]
+    longest = lLong[numLetter]
     if len(line) < len(shortestWord):
         data[firstLetter:'shortest'] = line
     if len(line) > len(longestWord):
