@@ -7,7 +7,7 @@ file = open('engmix.txt')
 for line in file:
     line = line.strip()
     word = ""
-    for i in range(len(line)-1,0,-1):
+    for i in range(len(line)-1,-1,-1):
         word += line[i]
     if line == word:
         print(word)
