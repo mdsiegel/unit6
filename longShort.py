@@ -10,14 +10,15 @@ lAlph = ['']*26
 
 i = 0
 for ch in 'abcdefghijklmnopqrstuvwxyz':
-    lAlph[i] = ch
+    lAlph[ch] = i
     i += 1
     
 
 for line in file:
     line = line.strip()
     firstLetter = line[0]
-    shortestWord = lShort[
+    numLetter = lAlph[firstLetter]
+    shortestWord = lShort
     if len(line) < len(shortestWord):
         data[firstLetter:'shortest'] = line
     if len(line) > len(longestWord):
