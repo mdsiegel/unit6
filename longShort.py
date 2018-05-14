@@ -17,6 +17,7 @@ for line in file:
     line = line.strip()
     if len(line) > 0:
         firstLetter = line[0]
+        print(line)
         if line[0] not in alph:
             print(line[0])
         numLetter = alph.index(firstLetter)
