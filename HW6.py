@@ -27,7 +27,8 @@ else:
 #3
 file2 = open('HW6.py')
 for line2 in file2:
-    line2 = line2.strip() += '!'
+    line2 = line2.strip()
+    line2 += '!'
     print(line2)
 
     
