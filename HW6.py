@@ -39,6 +39,7 @@ FinalWord = ''
 for line in file:
     line = line.strip()
     if line.count(letter) > number:
+        number = line.count(letter)
         FinalWord = line
 print(FinalWord)
 
