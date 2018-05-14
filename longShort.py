@@ -8,19 +8,18 @@ lShort = ['']*26
 lLong = ['']*26
 lAlph = ['']*26
 
-i = 0
-for ch in 'abcdefghijklmnopqrstuvwxyz':
-    lAlph[ch] = i
-    i += 1
+
+alph = 'abcdefghijklmnopqrstuvwxyz'
+    
     
 
 for line in file:
     line = line.strip()
     firstLetter = line[0]
-    numLetter = lAlph[firstLetter]
+    numLetter = alph.index(line[0])
     shortestWord = lShort[numLetter]
     longest = lLong[numLetter]
     if len(line) < len(shortestWord):
         lShort[numLetter] = line
-    if len(line) > len(longestWord):
+    if len(line) > len(longest):
         lLong[numLetter] = line
