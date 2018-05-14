@@ -15,11 +15,14 @@ alph = 'abcdefghijklmnopqrstuvwxyz'
 
 for line in file:
     line = line.strip()
-    firstLetter = line[0]
-    numLetter = alph.index(line[0])
-    shortestWord = lShort[numLetter]
-    longest = lLong[numLetter]
-    if len(line) < len(shortestWord):
-        lShort[numLetter] = line
-    if len(line) > len(longest):
-        lLong[numLetter] = line
+    if len(line) > 0:
+        firstLetter = line[0]
+        if line[0] not in alph:
+            print(line[0])
+        numLetter = alph.index(firstLetter)
+        shortestWord = lShort[numLetter]
+        longestWord = lLong[numLetter]
+        if len(line) < len(shortestWord):
+            lShort[numLetter] = line
+        if len(line) > len(longestWord):
+            lLong[numLetter] = line
