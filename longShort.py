@@ -21,6 +21,6 @@ for line in file:
     shortestWord = lShort[numLetter]
     longest = lLong[numLetter]
     if len(line) < len(shortestWord):
-        data[firstLetter:'shortest'] = line
+        lShort[numLetter] = line
     if len(line) > len(longestWord):
-        data[firstLetter:'longest'] = line
+        lLong[numLetter] = line
