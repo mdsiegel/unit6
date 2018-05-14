@@ -13,6 +13,7 @@ for line in file:
         """
 
 #2
+"""
 L = []
 for line in file:
     L.append(line.strip())
@@ -21,6 +22,13 @@ if num >= 0 and num <= len(L):
     print(L[num])
 else:
     print('not in range')
+    """
+
+#3
+file2 = open('HW6.py')
+for line2 in file2:
+    line2 = line2.strip() += '!'
+    print(line2)
 
     
 
