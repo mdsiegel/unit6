@@ -23,13 +23,22 @@ if num >= 0 and num <= len(L):
 else:
     print('not in range')
     """
-
+"""
 #3
 file2 = open('HW6.py')
 for line2 in file2:
     line2 = line2.strip()
     line2 += '!'
     print(line2)
+"""
 
-    
+#4
+number = 0
+letter = input('Enter a letter: ')
+FinalWord = ''
+for line in file:
+    line = line.strip()
+    if line.count(letter) > number:
+        FinalWord = line
+print(FinalWord)
 
