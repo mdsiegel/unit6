@@ -5,9 +5,22 @@
 fileName = input('Enter a file name: ')
 file = open(fileName)
 
-def WordCount():
-    count = 0
-    file = file.strip()
-    for line in file:
-        count += len(line)
-    print
+
+count = 0
+
+for line in file:
+    line = line.strip()
+    for word in line:
+        count +=1
+print(count)
+
+
+count2 = 0
+
+for line in file:
+    line = line.strip()
+    for word in line:
+        for ch in word:
+            count2+=1
+print(count2)
+
