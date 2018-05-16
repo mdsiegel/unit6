@@ -4,7 +4,7 @@
 
 file = open('engmix.txt')
 
-lShort = ['']*26
+lShort = ['abcdefghijklmnopqrstuvwxyz']*26
 lLong = ['']*26
 
 
@@ -21,8 +21,8 @@ for line in file:
         numLetter = alph.index(firstLetter)
         shortestWord = lShort[numLetter]
         longestWord = lLong[numLetter]
+        
         if len(line) < len(shortestWord):
-            print(line)
             lShort[numLetter] = line
         if len(line) > len(longestWord):
             lLong[numLetter] = line
