@@ -11,8 +11,14 @@ count = 0
 for line in file:
     line = line.strip()
     count +=1
-print(count)
+print('There are',count,'lines')
 
+count3 = 0
+for line in file:
+    line = line.strip()
+    lineList = line.split(' ')
+    count3 += len(lineList)
+print('There are',count3,'words')
 
 count2 = 0
 
@@ -21,5 +27,5 @@ for line in file:
     for word in line:
         for ch in word:
             count2+=1
-print(count2)
+print('There are',count2,'characters')
 
