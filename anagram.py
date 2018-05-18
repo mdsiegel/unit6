@@ -8,7 +8,7 @@ letters = []
 for ch in word:
     letters.append(ch)
 
+length = len(letters)
 for line in file:
-    if letters in line:
+    if word in line:
         print(line)
-        
