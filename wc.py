@@ -10,8 +10,7 @@ count = 0
 
 for line in file:
     line = line.strip()
-    for word in line:
-        count +=1
+    count +=1
 print(count)
 
 
