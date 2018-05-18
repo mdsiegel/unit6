@@ -9,6 +9,6 @@ for ch in word:
     letters.append(ch)
 
 for line in file:
-    for l in letters:
-        if l in line:
-            print('line')
+    if letters in line:
+        print(line)
+        
