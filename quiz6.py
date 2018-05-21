@@ -24,6 +24,7 @@ for line in file:
             break
 '''
 
+'''
 #3
 letter = (input('Enter a letter: ')).lower()
 num = int(input('Enter a number: '))
@@ -32,3 +33,13 @@ for line in file:
     if len(line) > 0:
         if line[0] == letter and len(line) == num:
             print(line)
+'''
+
+#4
+count = 0
+for line in file:
+    if len(line) >= 10:
+        count+=1
+        if count == 8000:
+            print(line)
+            break
