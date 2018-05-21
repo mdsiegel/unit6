@@ -36,6 +36,7 @@ for line in file:
 '''
 
 #4
+'''
 count = 0
 for line in file:
     line = line.strip()
@@ -44,6 +45,7 @@ for line in file:
         if count == 8000:
             print(line)
             break
+        '''
 
 #5
 totalCount = 0
@@ -56,6 +58,6 @@ for line in file:
             count += 1
     if count > totalCount:
         totalCount = count
-        line = word
+        word = line
 print(word)
         
