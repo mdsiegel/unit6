@@ -14,8 +14,14 @@ for line in file:
 '''
 
 #2
+'''
 for line in file:
     if len(line) >= 9:
         if line[0] == line[4] and line[0] == line[8]:
             print(line)
             break
+'''
+
+#3
+letter = (input('Enter a letter: ')).lower()
+num = int(input
