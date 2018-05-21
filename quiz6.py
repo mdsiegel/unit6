@@ -60,4 +60,5 @@ for line in file:
         totalCount = count
         word = line
 print(word)
+print(totalCount)
         
