@@ -38,8 +38,24 @@ for line in file:
 #4
 count = 0
 for line in file:
+    line = line.strip()
     if len(line) >= 10:
         count+=1
         if count == 8000:
             print(line)
             break
+
+#5
+totalCount = 0
+word = ''
+for line in file:
+    count = 0
+    line = line.strip()
+    for ch in line:
+        if ch in 'aeiou':
+            count += 1
+    if count > totalCount:
+        totalCount = count
+        line = word
+print(word)
+        
