@@ -55,7 +55,11 @@ def mouseClick(event):
         data['ShipsPicked'] +=1
         if data['ShipsPicked'] == 3:
             data['PickShips'] = False
-    
+    else:
+        (r,c) = findBox(x,y)
+        if board1[r][c] == 2:
+            print('got it')
+        print(board2)
 
 
 if __name__ == '__main__':
