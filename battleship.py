@@ -28,9 +28,9 @@ def buildBoard():
 
 def pickShips():
     for i in range(0,3):
-        randint1 = randint(1,4)
-        randint2 = randint(1,4)
-        board2[randint1][randint2] = 2
+        r1 = randint(0,4)
+        r2 = randint(0,4)
+        board1[r1][r2] = 2
 
 
 if __name__ == '__main__':
