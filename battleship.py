@@ -16,7 +16,7 @@ def buildBoard():
     blackOutline = LineStyle(1,black) #pixels,color
     for r in range(0,4):
         for c in range(0,4):
-            if board1[r][c] == 2:
+            if board2[r][c] == 2:
                 box = RectangleAsset(100,100,blackOutline,red)
             else:
                 box = RectangleAsset(100,100,blackOutline,white)
@@ -28,14 +28,14 @@ def buildBoard():
 
 def pickShips():
     for i in range(0,3):
-        r1 = randint(0,4)
-        r2 = randint(0,4)
-        board1[r1][r2] = 2
+        r1 = randint(0,3)
+        r2 = randint(0,3)
+        board2[r1][r2] = 2
 
 
 if __name__ == '__main__':
     board1 = [[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]]
     board2 = [[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]]
-    buildBoard()
     pickShips()
+    buildBoard()
     App().run()
