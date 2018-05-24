@@ -18,7 +18,12 @@ def buildBoard():
         for c in range(0,4):
             box = RectangleAsset(100,100,blackOutline,white)
             Sprite(box, (0+(100*r),0+(100*c)))
-
+    
+    board2 = [[0,0,0],[0,0,0],[0,0,0]]
+    for r in range(0,4):
+        for c in range(0,4):
+            box = RectangleAsset(100,100,blackOutline,white)
+            Sprite(box, (500+(100*r),0+(100*c)))
 
 if __name__ == '__main__':
     buildBoard()
