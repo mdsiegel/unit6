@@ -14,7 +14,6 @@ white = Color(0xFFFFFF,1)
 
 def buildBoard():
     blackOutline = LineStyle(1,black) #pixels,color
-    board1 = [[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]]
     for r in range(0,4):
         for c in range(0,4):
             if board1[r][c] == 2:
@@ -22,8 +21,6 @@ def buildBoard():
             else:
                 box = RectangleAsset(100,100,blackOutline,white)
             Sprite(box, (0+(100*r),0+(100*c)))
-    
-    board2 = [[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]]
     for r in range(0,4):
         for c in range(0,4):
             box = RectangleAsset(100,100,blackOutline,white)
@@ -37,6 +34,8 @@ def pickShips():
 
 
 if __name__ == '__main__':
+    board1 = [[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]]
+    board2 = [[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]]
     buildBoard()
     pickShips()
     App().run()
