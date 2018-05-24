@@ -10,7 +10,6 @@ green = Color(0x00FF00,1)
 blue = Color(0x0000FF,1)
 black = Color(0x000000,1)
 white = Color(0xFFFFFF,1)
-PICKSHIPS = True
 
 def buildBoard():
     blackOutline = LineStyle(1,black) #pixels,color
@@ -33,7 +32,7 @@ def findBox(clickx,clicky):
         for c in range(0,4):
             if clickx > 100*r and clickx < 100*(r+1) and clicky > 100*c and clicky < 100*(c+1):
                 return (r,c)
-    if PICKSHIPS == True:
+    if data['PickShips'] == True:
         for r in range(0,4):
             for c in range(0,4):
                 if clickx > 500+(100*r) and clickx < 500+(100*(r+1)) and clicky > 100*c and clicky < 100*(c+1):
@@ -49,13 +48,20 @@ def pickShips():
 def mouseClick(event):
     x = event.x
     y = event.y
-    if PICKSHIPS == True:
+    if data['PickShips'] == True:
         (r,c) = findBox(x,y)
         board2[r][c] = 2
         print(board2)
+        data['ShipsPicked'] +=1
+        if data['ShipsPicked'] == 3:
+            data['PickShips'] = False
+        
 
 
 if __name__ == '__main__':
+    data = {}
+    data['PickShips'] = True
+    data['ShipsPicked'] = 0
     board1 = [[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]]
     board2 = [[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]]
     pickShips()
