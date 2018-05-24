@@ -55,7 +55,7 @@ def mouseClick(event):
         data['ShipsPicked'] +=1
         if data['ShipsPicked'] == 3:
             data['PickShips'] = False
-        
+    
 
 
 if __name__ == '__main__':
