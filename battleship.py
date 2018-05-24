@@ -51,7 +51,8 @@ def mouseClick(event):
     y = event.y
     if PICKSHIPS == True:
         (r,c) = findBox(x,y)
-        
+        board2[r][c] = 2
+        print(board2)
 
 
 if __name__ == '__main__':
