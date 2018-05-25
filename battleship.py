@@ -22,7 +22,10 @@ def buildBoard():
             Sprite(box, (0+(100*r),0+(100*c)))
     for r in range(0,4):
         for c in range(0,4):
-            box = RectangleAsset(100,100,blackOutline,white)
+            if board2[r][c] == 1:
+                box = RectangleAsset(100,100,blackOutline,red)
+            else:
+                box = RectangleAsset(100,100,blackOutline,white)
             Sprite(box, (500+(100*r),0+(100*c)))
 
 def findBox(clickx,clicky):
@@ -62,7 +65,7 @@ def mouseClick(event):
             board1[r][c] = 1
             buildBoard()
         print(board1)
-    computerTurn()
+        computerTurn()
 
 def computerTurn():
     ran1 = randint(0,3)
@@ -72,6 +75,7 @@ def computerTurn():
     if board2[ran1][ran2] == 2:
         print('gotcha')
         board2[ran1][ran2] = 1
+        buildBoard()
         
 
 
