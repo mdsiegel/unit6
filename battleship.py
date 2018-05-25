@@ -63,6 +63,14 @@ def mouseClick(event):
             buildBoard()
         print(board1)
 
+def computerTurn():
+    ran1 = randint(0,3)
+    ran2 = randint(0,3)
+    if board2[ran1][ran2] == 2:
+        print('gotcha')
+        board2[ran1][ran2] = 1
+        
+
 
 if __name__ == '__main__':
     data = {}
