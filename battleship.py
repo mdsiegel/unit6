@@ -15,7 +15,7 @@ def buildBoard():
     blackOutline = LineStyle(1,black) #pixels,color
     for r in range(0,4):
         for c in range(0,4):
-            if board1[r][c] == 1:
+            if board1[r][c] == 2:
                 box = RectangleAsset(100,100,blackOutline,red)
             else:
                 box = RectangleAsset(100,100,blackOutline,white)
