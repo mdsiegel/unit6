@@ -62,6 +62,7 @@ def mouseClick(event):
             board1[r][c] = 1
             buildBoard()
         print(board1)
+    computerTurn()
 
 def computerTurn():
     ran1 = randint(0,3)
