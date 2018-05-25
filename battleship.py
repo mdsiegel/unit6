@@ -67,6 +67,8 @@ def mouseClick(event):
 def computerTurn():
     ran1 = randint(0,3)
     ran2 = randint(0,3)
+    if board2[ran1][ran2] == 1:
+        computerTurn()
     if board2[ran1][ran2] == 2:
         print('gotcha')
         board2[ran1][ran2] = 1
