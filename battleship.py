@@ -59,6 +59,8 @@ def mouseClick(event):
         (r,c) = findBox(x,y)
         if board1[r][c] == 2:
             print('got it')
+            board1[r][c] == 1
+            buildBoard()
         print(board2)
 
 
