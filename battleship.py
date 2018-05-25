@@ -15,7 +15,7 @@ def buildBoard():
     blackOutline = LineStyle(1,black) #pixels,color
     for r in range(0,4):
         for c in range(0,4):
-            if board1[r][c] == 2:
+            if board1[r][c] == 1:
                 box = RectangleAsset(100,100,blackOutline,red)
             else:
                 box = RectangleAsset(100,100,blackOutline,white)
@@ -61,7 +61,7 @@ def mouseClick(event):
             print('got it')
             board1[r][c] == 1
             buildBoard()
-        print(board2)
+        print(board1)
 
 
 if __name__ == '__main__':
