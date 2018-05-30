@@ -42,7 +42,7 @@ def findBox(clickx,clicky):
                     return (r,c)
 
 def pickShips():
-    for i in range(0,3):
+    for i in range(0,4):
         r1 = randint(0,4)
         r2 = randint(0,4)
         board1[r1][r2] = 2
@@ -56,7 +56,7 @@ def mouseClick(event):
         board2[r][c] = 2
         print(board2)
         data['ShipsPicked'] +=1
-        if data['ShipsPicked'] == 3:
+        if data['ShipsPicked'] == 4:
             data['PickShips'] = False
     else:
         (r,c) = findBox(x,y)
