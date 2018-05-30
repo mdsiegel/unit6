@@ -38,7 +38,7 @@ def findBox(clickx,clicky):
     if data['PickShips'] == True:
         for r in range(0,5):
             for c in range(0,5):
-                if clickx > 500+(100*r) and clickx < 500+(100*(r+1)) and clicky > 100*c and clicky < 100*(c+1):
+                if clickx > 500+(75*r) and clickx < 500+(75*(r+1)) and clicky > 75*c and clicky < 75*(c+1):
                     return (r,c)
 
 def pickShips():
