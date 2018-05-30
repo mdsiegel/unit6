@@ -13,38 +13,38 @@ white = Color(0xFFFFFF,1)
 
 def buildBoard():
     blackOutline = LineStyle(1,black) #pixels,color
-    for r in range(0,4):
-        for c in range(0,4):
+    for r in range(0,5):
+        for c in range(0,5):
             if board1[r][c] == 1:
-                box = RectangleAsset(100,100,blackOutline,red)
+                box = RectangleAsset(75,75,blackOutline,red)
             else:
-                box = RectangleAsset(100,100,blackOutline,white)
-            Sprite(box, (0+(100*r),0+(100*c)))
-    for r in range(0,4):
-        for c in range(0,4):
+                box = RectangleAsset(75,75,blackOutline,white)
+            Sprite(box, (0+(75*r),0+(75*c)))
+    for r in range(0,5):
+        for c in range(0,5):
             if board2[r][c] == 1:
-                box = RectangleAsset(100,100,blackOutline,red)
+                box = RectangleAsset(75,75,blackOutline,red)
             else:
-                box = RectangleAsset(100,100,blackOutline,white)
-            Sprite(box, (500+(100*r),0+(100*c)))
+                box = RectangleAsset(75,75,blackOutline,white)
+            Sprite(box, (500+(75*r),0+(75*c)))
 
 def findBox(clickx,clicky):
-    boxLength = 100
-    boxHeight = 100
-    for r in range(0,4):
-        for c in range(0,4):
-            if clickx > 100*r and clickx < 100*(r+1) and clicky > 100*c and clicky < 100*(c+1):
+    boxLength = 75
+    boxHeight = 75
+    for r in range(0,5):
+        for c in range(0,5):
+            if clickx > 75*r and clickx < 75*(r+1) and clicky > 75*c and clicky < 75*(c+1):
                 return (r,c)
     if data['PickShips'] == True:
-        for r in range(0,4):
-            for c in range(0,4):
+        for r in range(0,5):
+            for c in range(0,5):
                 if clickx > 500+(100*r) and clickx < 500+(100*(r+1)) and clicky > 100*c and clicky < 100*(c+1):
                     return (r,c)
 
 def pickShips():
     for i in range(0,3):
-        r1 = randint(0,3)
-        r2 = randint(0,3)
+        r1 = randint(0,4)
+        r2 = randint(0,4)
         board1[r1][r2] = 2
     print('Pick Ships')
     
@@ -68,8 +68,8 @@ def mouseClick(event):
         computerTurn()
 
 def computerTurn():
-    ran1 = randint(0,3)
-    ran2 = randint(0,3)
+    ran1 = randint(0,4)
+    ran2 = randint(0,4)
     if board2[ran1][ran2] == 1 or board2[ran1][ran2] == 3:
         computerTurn()
     if board2[ran1][ran2] == 2:
@@ -78,15 +78,16 @@ def computerTurn():
         buildBoard()
     if board2[ran1][ran2] == 0:
         board2[ran1][ran2] = 3
-        
+
+                
 
 
 if __name__ == '__main__':
     data = {}
     data['PickShips'] = True
     data['ShipsPicked'] = 0
-    board1 = [[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]]
-    board2 = [[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]]
+    board1 = [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]]
+    board2 = [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]]
     pickShips()
     buildBoard()
     App().listenMouseEvent('click', mouseClick)
