@@ -63,6 +63,9 @@ def mouseClick(event):
         if board1[r][c] == 2:
             print('got it')
             board1[r][c] = 1
+            data['UserCount'] += 1
+            if data['UserCount'] == 4:
+                print('You win')
             buildBoard()
         print(board1)
         computerTurn()
