@@ -12,11 +12,14 @@ black = Color(0x000000,1)
 white = Color(0xFFFFFF,1)
 
 def buildBoard():
+    redrawAll()
     blackOutline = LineStyle(1,black) #pixels,color
     for r in range(0,5):
         for c in range(0,5):
             if board1[r][c] == 1:
                 box = RectangleAsset(75,75,blackOutline,red)
+            elif board1[r][c] == 3:
+                box = RectangleAsset(75,75,blackOutline,blue)
             else:
                 box = RectangleAsset(75,75,blackOutline,white)
             Sprite(box, (0+(75*r),0+(75*c)))
@@ -24,9 +27,17 @@ def buildBoard():
         for c in range(0,5):
             if board2[r][c] == 1:
                 box = RectangleAsset(75,75,blackOutline,red)
+            elif board2[r][c] == 2:
+                box = RectangleAsset(75,75,blackOutline,green)
+            elif board2[r][c] == 3:
+                box = RectangleAsset(75,75,blackOutline,blue)
             else:
                 box = RectangleAsset(75,75,blackOutline,white)
             Sprite(box, (500+(75*r),0+(75*c)))
+
+def redrawAll():
+    for item in App().spritelist[:]:
+        item.destroy()
 
 def findBox(clickx,clicky):
     boxLength = 75
@@ -41,6 +52,7 @@ def findBox(clickx,clicky):
                 if clickx > 500+(75*r) and clickx < 500+(75*(r+1)) and clicky > 75*c and clicky < 75*(c+1):
                     return (r,c)
 
+
 def pickShips():
     for i in range(0,4):
         r1 = randint(0,4)
@@ -54,6 +66,7 @@ def mouseClick(event):
     if data['PickShips'] == True:
         (r,c) = findBox(x,y)
         board2[r][c] = 2
+        buildBoard()
         print(board2)
         data['ShipsPicked'] +=1
         if data['ShipsPicked'] == 4:
@@ -66,6 +79,9 @@ def mouseClick(event):
             data['UserCount'] += 1
             if data['UserCount'] == 4:
                 print('You win')
+            buildBoard()
+        elif board1[r][c] == 0:
+            board1[r][c] = 3
             buildBoard()
         print(board1)
         computerTurn()
@@ -84,6 +100,7 @@ def computerTurn():
         buildBoard()
     if board2[ran1][ran2] == 0:
         board2[ran1][ran2] = 3
+        buildBoard()
 
                 
 
