@@ -65,6 +65,7 @@ def mouseClick(event):
     y = event.y
     if data['PickShips'] == True:
         (r,c) = findBox(x,y)
+   
         board2[r][c] = 2
         buildBoard()
         print(board2)
@@ -73,6 +74,8 @@ def mouseClick(event):
             data['PickShips'] = False
     else:
         (r,c) = findBox(x,y)
+        r = 375//x
+        print(r)
         if board1[r][c] == 2:
             print('got it')
             board1[r][c] = 1
