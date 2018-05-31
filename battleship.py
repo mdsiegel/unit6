@@ -75,6 +75,9 @@ def computerTurn():
     if board2[ran1][ran2] == 2:
         print('gotcha')
         board2[ran1][ran2] = 1
+        data['ComCount'] += 1
+        if data['ComCount'] == 4:
+            print('You lose')
         buildBoard()
     if board2[ran1][ran2] == 0:
         board2[ran1][ran2] = 3
@@ -86,6 +89,8 @@ if __name__ == '__main__':
     data = {}
     data['PickShips'] = True
     data['ShipsPicked'] = 0
+    data['ComCount'] = 0
+    data['UserCount'] = 0
     board1 = [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]]
     board2 = [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]]
     pickShips()
