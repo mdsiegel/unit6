@@ -44,6 +44,10 @@ def pickShips():
     for i in range(0,4):
         r1 = randint(0,4)
         r2 = randint(0,4)
+        if board1[r1][r2] == 2:
+            print('did it')
+            r1 = randint(0,4)
+            r2 = randint(0,4)
         board1[r1][r2] = 2
     print('Pick Ships')
     
@@ -62,18 +66,19 @@ def mouseClick(event):
     else:
         r = x//75
         c = y//75
-        if board1[r][c] == 2:
-            print('got it')
-            board1[r][c] = 1
-            data['UserCount'] += 1
-            if data['UserCount'] == 4:
-                print('You win')
-            buildBoard()
-        elif board1[r][c] == 0:
-            board1[r][c] = 3
-            buildBoard()
-        print(board1)
-        computerTurn()
+        if r < 5 and c < 5 and r >= 0 and c >= 0:
+            if board1[r][c] == 2:
+                print('got it')
+                board1[r][c] = 1
+                data['UserCount'] += 1
+                if data['UserCount'] == 4:
+                    print('You win')
+                buildBoard()
+            elif board1[r][c] == 0:
+                board1[r][c] = 3
+                buildBoard()
+            print(board1)
+            computerTurn()
 
 def computerTurn():
     ran1 = randint(0,4)
