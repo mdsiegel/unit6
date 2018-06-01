@@ -73,6 +73,8 @@ def mouseClick(event):
                 data['UserCount'] += 1
                 if data['UserCount'] == 4:
                     print('You win')
+                    winText = TextAsset('YOU WIN!!!!',fill=blue,style='bold 40pt Times')
+                    Sprite(winText, (200,200))
                 buildBoard()
             elif board1[r][c] == 0:
                 board1[r][c] = 3
@@ -91,6 +93,8 @@ def computerTurn():
         data['ComCount'] += 1
         if data['ComCount'] == 4:
             print('You lose')
+            loseText = TextAsset('YOU LOSE',fill=red,style='bold 40pt Times')
+            Sprite(loseText, (200,200))
         buildBoard()
     if board2[ran1][ran2] == 0:
         board2[ran1][ran2] = 3
