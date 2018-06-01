@@ -39,19 +39,6 @@ def redrawAll():
     for item in App().spritelist[:]:
         item.destroy()
 
-def findBox(clickx,clicky):
-    boxLength = 75
-    boxHeight = 75
-    for r in range(0,5):
-        for c in range(0,5):
-            if clickx > 75*r and clickx < 75*(r+1) and clicky > 75*c and clicky < 75*(c+1):
-                return (r,c)
-    if data['PickShips'] == True:
-        for r in range(0,5):
-            for c in range(0,5):
-                if clickx > 500+(75*r) and clickx < 500+(75*(r+1)) and clicky > 75*c and clicky < 75*(c+1):
-                    return (r,c)
-
 
 def pickShips():
     for i in range(0,4):
