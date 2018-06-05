@@ -116,6 +116,7 @@ if __name__ == '__main__':
     data['UserCount'] = 0
     board1 = [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]]
     board2 = [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]]
+    instruction = TextAsset('Matthew',fill=blue,style='bold 40pt Times')
     pickShips()
     buildBoard()
     App().listenMouseEvent('click', mouseClick)
