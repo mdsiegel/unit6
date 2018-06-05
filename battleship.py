@@ -14,8 +14,9 @@ white = Color(0xFFFFFF,1)
 #Building the playing bards
 def buildBoard():
     redrawAll()
-    instruction = TextAsset('First,chose 4 ships on the right board.Then, you can guess for ships on the left board.',fill=black,style='bold 10pt Times')
-    Sprite(instruction, (0,400))
+    if data['PickShips'] == True:
+        pickText = TextAsset('Pick 4 ships on the right board',fill=black,style='bold 15pt Times')
+        Sprite(pickText, (500,400))
     blackOutline = LineStyle(1,black) #pixels,color
     #Checking to see if someone has won yet and if the computer or player has then there is text to show it
     if data['ComCount'] == 4:
