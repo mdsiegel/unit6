@@ -17,11 +17,9 @@ def buildBoard():
     blackOutline = LineStyle(1,black) #pixels,color
     #Checking to see if someone has won yet and if the computer or player has then there is text to show it
     if data['ComCount'] == 4:
-        print('You lose')
-        Losetext = TextAsset('YOU LOSE',fill=blue,style='bold 40pt Times')
+        Losetext = TextAsset('YOU LOSE',fill=red,style='bold 40pt Times')
         Sprite(Losetext, (400,400))
     if data['UserCount'] == 4:
-        print('You win')
         Wintext = TextAsset('YOU WIN',fill=blue,style='bold 40pt Times')
         Sprite(Wintext, (400,400))
     
@@ -66,15 +64,17 @@ def pickShips():
         board1[r1][r2] = 2
     print('Pick Ships')
     
+
+#Called when you click the mouse. Figures out where on the board you clicked.
 def mouseClick(event):
     x = event.x
     y = event.y
+    #This is called if you are chosing where the ships go since you'll be clicking on the other board.
     if data['PickShips'] == True:
         r = (x-500)//75
         c = y//75
         board2[r][c] = 2
         buildBoard()
-        print(board2)
         data['ShipsPicked'] +=1
         if data['ShipsPicked'] == 4:
             data['PickShips'] = False
@@ -83,29 +83,23 @@ def mouseClick(event):
         c = y//75
         if r < 5 and c < 5 and r >= 0 and c >= 0:
             if board1[r][c] == 2:
-                print('got it')
                 board1[r][c] = 1
                 data['UserCount'] += 1
-                if data['UserCount'] == 4:
-                    print('You win')
                 buildBoard()
             elif board1[r][c] == 0:
                 board1[r][c] = 3
                 buildBoard()
-            print(board1)
             computerTurn()
 
+#Computer chosing spots to guess. 
 def computerTurn():
     ran1 = randint(0,4)
     ran2 = randint(0,4)
     if board2[ran1][ran2] == 1 or board2[ran1][ran2] == 3:
         computerTurn()
     if board2[ran1][ran2] == 2:
-        print('gotcha')
         board2[ran1][ran2] = 1
         data['ComCount'] += 1
-        if data['ComCount'] == 4:
-            print('You lose')
         buildBoard()
     if board2[ran1][ran2] == 0:
         board2[ran1][ran2] = 3
