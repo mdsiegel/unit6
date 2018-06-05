@@ -11,14 +11,21 @@ blue = Color(0x0000FF,1)
 black = Color(0x000000,1)
 white = Color(0xFFFFFF,1)
 
+#Building the playing bards
 def buildBoard():
     redrawAll()
     blackOutline = LineStyle(1,black) #pixels,color
+    #Checking to see if someone has won yet and if the computer or player has then there is text to show it
     if data['ComCount'] == 4:
         print('You lose')
+        Losetext = TextAsset('YOU LOSE',fill=blue,style='bold 40pt Times')
+        Sprite(Losetext, (400,400))
     if data['UserCount'] == 4:
         print('You win')
-        
+        Wintext = TextAsset('YOU WIN',fill=blue,style='bold 40pt Times')
+        Sprite(Wintext, (400,400))
+    
+    #Building the computer's board. Checking to see if any of the boxes were hit or are misses
     for r in range(0,5):
         for c in range(0,5):
             if board1[r][c] == 1:
@@ -28,6 +35,7 @@ def buildBoard():
             else:
                 box = RectangleAsset(75,75,blackOutline,white)
             Sprite(box, (0+(75*r),0+(75*c)))
+    #Building the user board. Checkig to see if there are any hits or misses, and where the ships are.
     for r in range(0,5):
         for c in range(0,5):
             if board2[r][c] == 1:
@@ -40,17 +48,19 @@ def buildBoard():
                 box = RectangleAsset(75,75,blackOutline,white)
             Sprite(box, (500+(75*r),0+(75*c)))
 
+#Deleting the boards
 def redrawAll():
     for item in App().spritelist[:]:
         item.destroy()
 
 
+#The computer is picking a ship at 4 random locations
 def pickShips():
     for i in range(0,4):
         r1 = randint(0,4)
         r2 = randint(0,4)
         if board1[r1][r2] == 2:
-            print('did it')
+            #Trying again if the ships are at the same spot
             r1 = randint(0,4)
             r2 = randint(0,4)
         board1[r1][r2] = 2
