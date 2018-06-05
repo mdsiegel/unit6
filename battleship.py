@@ -14,6 +14,11 @@ white = Color(0xFFFFFF,1)
 def buildBoard():
     redrawAll()
     blackOutline = LineStyle(1,black) #pixels,color
+    if data['ComCount'] == 4:
+        print('You lose')
+    if data['UserCount'] == 4:
+        print('You win')
+        
     for r in range(0,5):
         for c in range(0,5):
             if board1[r][c] == 1:
